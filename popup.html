@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/stylesheets/popup.css"
+    />
+
+    <!-- <script src="https://js.stripe.com/v3/"></script> -->
+    <!-- <script src="https://www.paypal.com/sdk/js?client-id=AcdGUP548a7Dlb6s3wHW7CcUmlqTJyI8_e08AARpipRxuXJ9VGG6KnM3ZAyV0-ChQ4F5cw-rgFI1F_BS&currency=USD"></script> -->
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="popup_script.js"></script>
+  </head>
+
+  <body>
+    <div class="content-box-other active">
+      <div class="heading">
+      </div>
+      <div class="content-inner">
+        <h3 class="service-start">Click <a href="#" class="service-link">here</a> to start using this service</h3>
+        <div class="form-data">
+          <span class="country-select">__MSG_popup_internet_access_point__</span>
+          <!-- <img
+            src="assets/images/select-type01.png"
+            class="select-direction"
+          /> -->
+          <div class="click-country">
+            <select
+              id="selectCountry"
+              class="select-type01 select-size01"
+              style="display: none"
+            >
+              <option value="ca">Canada</option>
+              <option value="in">India</option>
+              <option value="nl">Netherlands</option>
+              <option value="us">United States</option>
+              <option value="sn">Singapore</option>
+              <option value="cn">China</option>
+              <option value="uk">United Kingdom</option>
+              <option value="jp">Japan</option>
+              <option value="fr">France</option></select
+            >
+            <a
+              class="selectmenu select-type01 select-size01"
+              style="width: 189px"
+            >
+              <span>Canada</span>
+              <img
+                src="assets/images/select.png"
+                class="select-direction"
+              />
+              <img
+                class="selectmenu-country"
+                src="https://hatscripts.github.io/circle-flags/flags/ca.svg"
+              />
+            </a>
+            <div
+              class="selectmenu-menu select-type01 select-size01"
+              style="width: 166px; display: none"
+            >
+              <div class="select-top">
+                <div class="select-l"></div>
+                <div class="select-r"></div>
+              </div>
+              <div class="select-c">
+                <div class="c">
+                  <ul></ul>
+                </div>
+              </div>
+              <div class="select-bottom">
+                <div class="select-l"></div>
+                <div class="select-r"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row-data off">
+        <div class="switch-contain service">
+          <span id="connectService">__MSG_popup_enable__</span>
+          <label class="switch">
+            <input type="checkbox" id="vpnstatus" />
+            <span class="slider" id="slidervpn"></span>
+          </label>
+        </div>
+        <div class="switch-contain adblock">
+          <span id="EDAdblock"></span>
+          <label class="switch">
+            <input type="checkbox" id="adblockstatus" />
+            <span class="slider" id="slideradblock"></span>
+          </label>
+        </div>
+        <!-- <a href="#" class="link-on">__MSG_popup_enable__</a>
+        <a href="#" class="link-off">__MSG_popup_disable__</a> -->
+      </div>
+      <!-- <div id="paypage" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2 style="display: flex; justify-content: center">Donation</h2>
+          </div>
+          <div class="modal-body">
+            <div id="day">
+              <div><h3>One Time</h3></div>
+              <div class="check">$1</div>
+              <input
+                class="messageCheckbox"
+                id="price"
+                type="checkbox"
+                value="1"
+              />
+              <div class="check">$5</div>
+              <input
+                class="messageCheckbox"
+                id="price"
+                type="checkbox"
+                value="5"
+              />
+              <div class="check">$50</div>
+              <input
+                class="messageCheckbox"
+                id="price"
+                type="checkbox"
+                value="50"
+              />
+            </div>
+            <div id="month">
+              <div><h3>Monthly</h3></div>
+              <div class="check">$1</div>
+              <input
+                class="messageCheckbox"
+                id="price"
+                type="checkbox"
+                value="1"
+              />
+              <div class="check">$5</div>
+              <input
+                class="messageCheckbox"
+                id="price"
+                type="checkbox"
+                value="5"
+              />
+              <div class="check">$50</div>
+              <input
+                class="messageCheckbox"
+                id="price"
+                type="checkbox"
+                value="50"
+              />
+            </div>
+            <div id="year">
+              <div><h3>Annually</h3></div>
+              <div class="check">$1</div>
+              <input
+                class="messageCheckbox"
+                id="price"
+                type="checkbox"
+                value="1"
+              />
+              <div class="check">$5</div>
+              <input
+                class="messageCheckbox"
+                id="price"
+                type="checkbox"
+                value="5"
+              />
+              <div class="check">$50</div>
+              <input
+                class="messageCheckbox"
+                id="price"
+                type="checkbox"
+                value="50"
+              />
+            </div>
+          </div>
+          <div id="choose">
+            <div style="display: flex; justify-content: center">
+              <h3>For custom amount please select box below</h3>
+            </div>
+            <div style="display: flex; justify-content: center">
+              <input class="messageCheckbox" type="checkbox" value="0" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div>
+              <button
+                class="pay"
+                id="stripe"
+                style="
+                  color: rgb(0, 48, 135);
+                  font-size: initial;
+                  font-style: oblique;
+                  font-weight: bold;
+                "
+              >
+                Stripe
+              </button>
+            </div>
+            <div id="paypal-checkout-button" style="opacity: 1"></div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div id="box">
+        <input
+          type="button"
+          id="toggle_button"
+          class="button1"
+          value="Enable AdBlock"
+        />
+      </div> -->
+      <div class="row-bottom">
+        <img class="mark" src="./assets/images/mark.png" />
+        <h5>__MSG_popup_ext_name__ @2023 </h5>&nbsp;
+        <p>For Chrome</p>
+      </div>
+    </div>
+  </body>
+</html>

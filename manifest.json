@@ -1,0 +1,51 @@
+{
+  "name": "Chrome Extension MV3",
+  "description": "Building a Chrome Extension MV3",
+  "version": "0.1.0",
+  "default_locale": "en",
+  "manifest_version": 3,
+  "icons": {
+    "16": "./images/icon16.png",
+    "48": "./images/icon48.png",
+    "128": "./images/icon128.png"
+  },
+  "background": {
+    "service_worker": "./background.js"
+  },
+  "action": {
+    "default_popup": "./popup.html",
+    "default_icons": {
+      "16": "./images/icon16.png",
+      "48": "./images/icon48.png",
+      "128": "./images/icon128.png"
+    }
+  },
+  "permissions": ["activeTab", "tabs", "storage", "scripting", "proxy", "webNavigation", "declarativeNetRequest", "declarativeNetRequestFeedback", "webRequest"],
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": false,
+        "path": "rules/rules.json"
+      },
+      {
+        "id": "ruleset_2",
+        "enabled": false,
+        "path": "rules/rules1.json"
+      }
+    ]
+  },
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "use_dynamic_url": true,
+      "resources": [
+        "src/web-accessible-resources/*"
+      ]
+    }
+  ]
+}
